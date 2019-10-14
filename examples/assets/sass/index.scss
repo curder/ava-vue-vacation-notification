@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+@import "$src/assets/sass/vacation/index.scss"; // 公告通知
+
+@import "./common.scss";
+@import "./vacation.scss";
+
+@tailwind utilities;

@@ -1,0 +1,21 @@
+@import "./variables";
+// header
+.vacation-notify-header,
+.button-handle a {
+  background-color: $base-color;
+}
+.vacation-notify-header {
+  @apply rounded-t relative;
+  .vacation-notify-header-title {
+    @apply py-4 text-lg font-normal text-center text-gray-200;
+    @screen md {
+      @apply text-xl;
+    }
+  }
+  .vacation-notify-header-times {
+    @apply text-white absolute top-0 right-0 text-2xl pr-2 cursor-pointer;
+    &:hover {
+      @apply text-gray-200;
+    }
+  }
+}

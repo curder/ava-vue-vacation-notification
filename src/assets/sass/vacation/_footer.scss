@@ -1,0 +1,16 @@
+.vacation-notify-footer {
+  .button-handle {
+    @apply flex justify-center pb-2;
+
+    @screen sm {
+      @apply pb-6;
+    }
+
+    a {
+      @apply px-10 py-2 text-gray-300 rounded;
+        &:hover {
+          @apply shadow-lg text-gray-200;
+      }
+    }
+  }
+}
