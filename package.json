@@ -1,8 +1,8 @@
 {
-  "name": "@curder/webpack-vue-component-demo",
+  "name": "@curder/ava-vue-component",
   "description": "A webpack config demo for vue component.",
   "author": "curder <q.curder@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "dependencies": {
@@ -24,8 +24,9 @@
   },
   "files": [
     "src",
-    "examples",
-    "dist/*.js"
+    "dist/*",
+    "*.json",
+    "*.js"
   ],
   "devDependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
@@ -66,6 +67,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/curder/ava-vue-components.git"
   },
   "browserslist": [
     "> 1%",
