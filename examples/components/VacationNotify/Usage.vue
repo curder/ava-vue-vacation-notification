@@ -75,6 +75,11 @@
           <p class="form-help text-xs text-gray-700">如果需要在一段时间内自动关闭，请输入对应的持续时间，时间结束后将自动关闭</p>
         </div>
         <div class="mt-2 block">
+          <span class="title">延迟展示时间（单位：秒）</span>
+          <input type="number" class="form-input mt-1 block w-full" placeholder="延迟时间" v-model="params.delay_time">
+          <p class="form-help text-xs text-gray-700">当满足条件允许弹层时，延迟的时间，让页面有更好的过度</p>
+        </div>
+        <div class="mt-2 block">
           <span class="title">站点公司名称</span>
           <input class="form-input mt-1 block w-full" placeholder="站点公司名称" v-model="params.company">
           <p class="form-help text-xs text-gray-700">如果不需要展示站点公司名称，则留空 默认值为空</p>
@@ -99,6 +104,7 @@ export default {
         title: "{{ this.params.title }}",
         company: "{{ this.params.company }}",
         date: "{{ this.params.date }}",
+        delay_time: "{{ this.params.date }}",
         should_duration: {{ this.params.should_duration }},
         duration: {{ this.params.duration }},
         show_footer_close_button: {{ this.params.show_footer_close_button }},
@@ -131,6 +137,7 @@ export default {
           title: "尊敬的客户您好：", // 称呼
           company: "", // 站点公司名称
           date: "", // 时间
+          delay_time: 0, //  // 延迟展示时间，单位 S，如果为 0 则立即展示
           should_duration: false, // 是否需要倒计时关闭，如果不需要则一直开启不自动关闭
           duration: 5, // 持续时间，单位 S
           show_footer_close_button: false,
