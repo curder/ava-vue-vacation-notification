@@ -1,29 +1,26 @@
-# npm-vue-demo
+# Ava Vue Components 
 
-## Project setup
-```
-yarn install
-```
+## Installation
 
-### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn add -D @curder/ava-vue-components
 ```
 
-### Compiles and minifies for production
+**Or**
+
 ```
-yarn run build
+npm install --save-dev @curder/ava-vue-components
+Register global plugins
+import Plugin from '@curder/ava-vue-components';
+Vue.use(Plugin);
 ```
 
-### Run your tests
-```
-yarn run test
-```
+## Register component
 
-### Lints and fixes files
 ```
-yarn run lint
-```
+import VacationNotify from '@curder/ava-vue-components/components/Vacation/Index.vue';
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+export default {
+  components: { VacationNotify },
+}
+```
