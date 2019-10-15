@@ -13,6 +13,7 @@ const default_params = {
   company: '', // 站点公司名称
   date: '', // 时间
   delay_time: 0, // 延迟展示时间，单位 S，如果为 0 则立即展示
+  scroller: false, // 是否拥有滚动条，默认为false，不允许滚动
   should_duration: false, // 是否需要倒计时关闭，如果不需要则一直开启不自动关闭
   duration: 5, // 持续时间，单位 S
   start_time: '2019-9-26 06:00:00', // 弹层开始时间

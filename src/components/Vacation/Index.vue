@@ -1,5 +1,13 @@
 <template>
-  <modal :name="modal_name" :clickToClose="false" :min-width="310" :max-width="500" width="50%" :adaptive="true" height="auto">
+  <modal :name="modal_name"
+         :clickToClose="false"
+         :min-width="310"
+         :max-width="500"
+         width="50%"
+         :adaptive="true"
+         height="auto"
+         @before-open="beforeOpen"
+         @before-close="beforeClose">
     <notify :params="finish_params"></notify>
   </modal>
 </template>
@@ -33,6 +41,20 @@ export default {
     }
   },
 
+  created() {
+    // 监听键盘的 Esc 事件
+    const escapeHandler = (e) => {
+      if (e.key === 'Escape' && this.show) {
+        this.hide();
+      }
+    };
+
+    document.addEventListener('keydown', escapeHandler);
+    this.$once('hook:destroyed', () => {
+      document.addEventListener('keydown', escapeHandler);
+    });
+  },
+
   mounted() {
     this.finish_params = Object.assign(default_params, this.params); // 配置的默认值
 
@@ -51,13 +73,6 @@ export default {
       }
     }
 
-    // Esc 关闭弹层
-    document.body.addEventListener("keyup", e => {
-      if (e.keyCode === 27) {
-        this.hide(); // how to hide any open modal?
-      }
-    });
-
     // 监听弹层关闭事件
     this.$bus.$on(bus_event.close_notify, () => {
       this.hide();
@@ -73,7 +88,18 @@ export default {
     },
     hide() {
       this.$modal.hide(modal_name); // 弹层的隐藏
-      clearInterval(this.vacation_notify_timer); // 清除定时器
+      if(this.vacation_notify_timer) clearInterval(this.vacation_notify_timer); // 清除定时器
+    },
+
+    beforeOpen() {
+      let { scroller } = this.finish_params;
+
+      !scroller && document.body.style.setProperty('overflow', 'hidden'); // 隐藏滚动条
+    },
+
+    beforeClose() {
+      let { scroller } = this.finish_params;
+      !scroller && document.body.style.removeProperty('overflow'); // 还原滚动条
     }
   }
 };

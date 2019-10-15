@@ -74,6 +74,22 @@
           <input type="number" class="form-input mt-1 block w-full" placeholder="持续时间" v-model="params.duration">
           <p class="form-help text-xs text-gray-700">如果需要在一段时间内自动关闭，请输入对应的持续时间，时间结束后将自动关闭</p>
         </div>
+
+        <div class="mt-2 block">
+          <span class="title">是否允许页面滚动</span>
+          <div class="mt-2">
+            <div class="inline-flex items-center">
+              <input type="radio" v-model="params.scroller" :value="true" class="form-radio text-indigo-600" name="scroller">
+              <span class="ml-2">是</span>
+            </div>
+            <div class="inline-flex items-center">
+              <input type="radio" v-model="params.scroller" :value="false" class="form-radio text-green-500" name="scroller">
+              <span class="ml-2">否</span>
+            </div>
+          </div>
+          <div class="text-xs text-gray-700">是否禁止页面滚动，默认是「否」</div>
+        </div>
+
         <div class="mt-2 block">
           <span class="title">延迟展示时间（单位：秒）</span>
           <input type="number" class="form-input mt-1 block w-full" placeholder="延迟时间" v-model="params.delay_time">
@@ -107,6 +123,7 @@ export default {
         delay_time: "{{ this.params.date }}",
         should_duration: {{ this.params.should_duration }},
         duration: {{ this.params.duration }},
+        scroller: {{ this.params.scroller }},
         show_footer_close_button: {{ this.params.show_footer_close_button }},
         start_time: {{ this.params.start_time }},
         end_time: {{ this.params.end_time }},
@@ -118,7 +135,7 @@ export default {
         </code>
       </div>
     </div>
-    <vacation-notify ref="vacation"></vacation-notify>
+    <vacation-notify ref="vacation" :params="params"></vacation-notify>
   </div>
 </template>
 <script>
@@ -137,7 +154,8 @@ export default {
           title: "尊敬的客户您好：", // 称呼
           company: "", // 站点公司名称
           date: "", // 时间
-          delay_time: 0, //  // 延迟展示时间，单位 S，如果为 0 则立即展示
+          delay_time: 0, // 延迟展示时间，单位 S，如果为 0 则立即展示
+          scroller: true, // 是否拥有滚动条，默认为false，不允许滚动
           should_duration: false, // 是否需要倒计时关闭，如果不需要则一直开启不自动关闭
           duration: 5, // 持续时间，单位 S
           show_footer_close_button: false,
