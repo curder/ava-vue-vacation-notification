@@ -2,7 +2,7 @@
   "name": "@curder/ava-vue-components",
   "description": "ava vue components.",
   "author": "curder <q.curder@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "dist/main.js",
   "dependencies": {
@@ -29,7 +29,8 @@
     "/src/*",
     "/dist/*",
     "*.json",
-    "*.js"
+    "*.js",
+    "!/postcss.config.js"
   ],
   "devDependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",

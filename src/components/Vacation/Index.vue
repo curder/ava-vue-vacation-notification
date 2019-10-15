@@ -26,13 +26,15 @@ export default {
       immediate: true,
       deep: true,
       handler(newValue, oldValue) {
-        this.finish_params = Object.assign(this.params, newValue); // 配置的默认值
+        if(newValue) {
+          this.finish_params = Object.assign(this.params, newValue); // 配置的默认值
+        }
       }
     }
   },
 
   mounted() {
-    // this.finish_params = Object.assign(default_params, this.params); // 配置的默认值
+    this.finish_params = Object.assign(default_params, this.params); // 配置的默认值
 
     let { start_time, end_time, delay_time } = this.finish_params;
 

@@ -112,7 +112,7 @@ export default {
         </code>
       </div>
     </div>
-    <vacation-notify ref="vacation" :params="params"></vacation-notify>
+    <vacation-notify ref="vacation"></vacation-notify>
   </div>
 </template>
 <script>
