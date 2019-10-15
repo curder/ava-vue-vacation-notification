@@ -8,7 +8,7 @@
         <router-link class="font-semibold text-gray-700 hover:underline" :to="{name: 'vacation-notify'}">Vacation Notify</router-link>
       </div>
       <div class="mt-2">
-        <a target="_blank" href="https://github.com/curder/webpack-vue-component-demo" class="text-sm font-semibold text-gray-600 hover:underline">Source on GitHub</a>
+        <a target="_blank" href="https://github.com/curder/ava-vue-components" class="text-sm font-semibold text-gray-600 hover:underline">Source on GitHub</a>
       </div>
     </div>
   </div>
