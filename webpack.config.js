@@ -15,16 +15,16 @@ module.exports = {
 
   mode: process.env.NODE_ENV,
 
-  entry: {
-    index: [
-      './src/index.js',
-      './src/assets/sass/index.scss'
-    ]
-  }, // 入口文件
+  entry: './src/index.js', // 入口文件
 
   output: {
-    path: path.resolve(__dirname, './dist'), // 目标文件路径
+    path: path.resolve(__dirname, 'dist'), // 目标文件路径
     filename: '[name].js', // 目标文件名
+    libraryExport: 'default',
+    library: 'avaVueComponents',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: 'typeof self !== \'undefined\' ? self : this',
   },
 
   module: {

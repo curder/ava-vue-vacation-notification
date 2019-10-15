@@ -10,7 +10,12 @@ yarn add -D @curder/ava-vue-components
 
 ```
 npm install --save-dev @curder/ava-vue-components
-Register global plugins
+```
+
+
+## Register global plugins
+
+```
 import Plugin from '@curder/ava-vue-components';
 Vue.use(Plugin);
 ```

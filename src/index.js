@@ -1,3 +1,4 @@
+import './assets/sass/index.scss'
 import VacationNotify from './components/Vacation/Index.vue'
 
 import Modal from 'vue-js-modal'
