@@ -9,19 +9,11 @@
       <code>npm install --save-dev @curder/ava-vue-components</code>
     </div>
 
-    <h3>Register global plugins</h3>
+    <h3>Register Plugins</h3>
     <div class="mt-2">
-      <code>import Plugin from '@curder/ava-vue-components';
+      <code>import '@curder/ava-vue-components/dist/main.css'; // 加载css
+import Plugin from '@curder/ava-vue-components';
         Vue.use(Plugin);
-      </code>
-    </div>
-    <h3>Register component</h3>
-    <div class="mt-2">
-      <code>import VacationNotify from '@curder/ava-vue-components/components/Vacation/Index.vue';
-
-export default {
-    components: { VacationNotify },
-}
       </code>
     </div>
   </div>

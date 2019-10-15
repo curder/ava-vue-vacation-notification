@@ -13,19 +13,10 @@ npm install --save-dev @curder/ava-vue-components
 ```
 
 
-## Register global plugins
+## Register Plugins
 
 ```
+import '@curder/ava-vue-components/dist/main.css'; // 加载css
 import Plugin from '@curder/ava-vue-components';
 Vue.use(Plugin);
-```
-
-## Register component
-
-```
-import VacationNotify from '@curder/ava-vue-components/components/Vacation/Index.vue';
-
-export default {
-  components: { VacationNotify },
-}
 ```
