@@ -1,8 +1,8 @@
 {
-  "name": "@curder/ava-vue-component",
-  "description": "A webpack config demo for vue component.",
+  "name": "@curder/ava-vue-components",
+  "description": "ava vue components.",
   "author": "curder <q.curder@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "dependencies": {
@@ -14,7 +14,10 @@
     "component",
     "vuejs",
     "vue",
-    "vue.js"
+    "vue.js",
+    "vacation",
+    "notify",
+    "ava"
   ],
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack-dev-server --hot --config=./examples/webpack.config.js",
