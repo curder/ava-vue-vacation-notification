@@ -1,10 +1,10 @@
 let path = require('path');
-// const glob = require('glob');
+const glob = require('glob');
 const chokidar = require('chokidar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 将css提取到单独的文件
-// const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 将css文件压缩体积
-// const PurgecssPlugin = require('purgecss-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 将css文件压缩体积
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader').VueLoaderPlugin;
 const inProduction = process.env.NODE_ENV === 'production';
 
@@ -92,4 +92,24 @@ module.exports = {
   optimization: {
     minimize: inProduction
   }
+}
+
+if(inProduction) {
+  module.exports.plugins.push(
+
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+        autoprefixer: true,
+      },
+      canPrint: true
+    }),
+
+    new PurgecssPlugin({
+      paths: glob.sync(path.join(__dirname, 'index.html')),
+    }),
+
+  );
 }
