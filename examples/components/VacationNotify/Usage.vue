@@ -49,7 +49,7 @@
           <div class="text-xs text-gray-700">如果展示底部关闭按钮，默认「不展示」</div>
         </div>
         <div class="mt-6 block">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded" @click="notifyNow">Notify Now</button>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded" @click="notifyNow"><div class="flex items-center justify-center">Notify Now<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ml-2 h-4 fill-current"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg></div></button>
         </div>
       </div>
 
