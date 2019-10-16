@@ -44,6 +44,9 @@ export default {
     if (this.should_duration) {
       this.$bus.$on(bus_event.duration_changed, ({ duration }) => {
         this.duration = duration;
+        if( duration === 0 ) {
+          this.$bus.$emit(bus_event.close_notify);
+        }
       });
     }
   },

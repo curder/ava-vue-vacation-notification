@@ -2,12 +2,6 @@ import moment from 'moment'
 import { bus_event } from '../config/vacation'
 
 const mixin = {
-  data() {
-    return {
-      vacation_notify_timer: null
-    }
-  },
-
   methods: {
     canBeShown(start_time, end_time) { // 是否能展示弹窗
       checkDateValid({ start_time, end_time }) // 检查时间格式是否正确
@@ -21,25 +15,6 @@ const mixin = {
       }
       return false
     },
-    countDown(duration = false, is_show = false) {
-      this.$bus.$on('clear-interval', () => {
-        alert()
-      })
-      // 倒计时
-      if (!is_show || duration === false) return
-      this.vacation_notify_timer = setInterval(() => {
-        if (duration > 0) {
-          --duration
-          this.$bus.$emit(bus_event.duration_changed, { duration })
-        } else {
-          clearInterval(this.vacation_notify_timer)
-        }
-      }, 1000)
-
-      setTimeout(() => {
-        this.$bus.$emit(bus_event.close_notify) // 关闭弹层
-      }, duration * 1000)
-    }
   }
 }
 

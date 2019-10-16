@@ -26,6 +26,8 @@ export default {
   data() {
     return {
       modal_name,
+      modal_shown: false,
+      vacation_notify_timer: null,
       finish_params: {} // 最终配置
     };
   },
@@ -83,23 +85,43 @@ export default {
     show() {
       let { should_duration, duration } = this.finish_params;
 
-      if (should_duration) this.countDown(duration, true); // 是否需要倒计时
+      if (should_duration) this.setTime(duration, true); // 是否需要倒计时
       this.$modal.show(modal_name); // 弹层的显示
     },
     hide() {
       this.$modal.hide(modal_name); // 弹层的隐藏
-      if(this.vacation_notify_timer) clearInterval(this.vacation_notify_timer); // 清除定时器
+
+      if(this.vacation_notify_timer) {
+        this.stopTime();
+      } // 清除定时器
+    },
+
+    setTime(duration = false, is_show = false) {
+      let that = this;
+      // 倒计时
+      if (!is_show || duration === false) return;
+      this.vacation_notify_timer = setInterval(() => {
+        duration--;
+        that.$bus.$emit(bus_event.duration_changed, { duration });
+      }, 1000);
+    },
+
+    stopTime() {
+      if (this.vacation_notify_timer) {
+        clearInterval(this.vacation_notify_timer)
+      }
     },
 
     beforeOpen() {
       let { scroller } = this.finish_params;
-
       !scroller && document.body.style.setProperty('overflow', 'hidden'); // 隐藏滚动条
+      this.modal_shown = true;
     },
 
     beforeClose() {
       let { scroller } = this.finish_params;
       !scroller && document.body.style.removeProperty('overflow'); // 还原滚动条
+      this.modal_shown = false;
     }
   }
 };

@@ -3,7 +3,8 @@ const modal_name = 'vacation-notify'
 const bus_event = {
   open_notify: 'open-notify',
   close_notify: 'close-notify',
-  duration_changed: 'duration-changed'
+  duration_changed: 'duration-changed',
+  // clear_interval: 'clear-interval',
 }
 
 // 弹窗默认参数
