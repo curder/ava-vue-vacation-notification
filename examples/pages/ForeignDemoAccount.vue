@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import {licenseKey, regWidget, layout} from "../../src/config/account/base";
+  import {licenseKey, regWidget, layout, langs} from "../../src/config/account/base";
 
   export default {
     data() {
@@ -12,9 +12,13 @@
         params: {
           security: { licenseKey },
           regWidget,
-          layout,
+          layout
         }
       }
+    },
+
+    mounted() {
+      this.params.layout.settings = Object.assign({}, this.params.layout.settings, {Lang: langs.zh_tw});
     }
   }
 </script>

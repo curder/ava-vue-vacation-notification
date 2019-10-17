@@ -68,5 +68,8 @@ export const LoginLayout = {
   }
 };
 
-
-
+export const langs = {
+  en: 'en',
+  zh_cn: 'zh-hans',
+  zh_tw: 'zh-hant',
+};

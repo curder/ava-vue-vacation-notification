@@ -25,7 +25,7 @@
 
     mounted() {
       // 默认值和自定义的值整合
-      const config = Object.assign(this.getBaseConfig(), this.params);
+      const config = Object.assign({}, this.getDefaultConfig(), this.params);
 
       const {security, regType, regWidget, layout} = config;
 
@@ -54,7 +54,7 @@
     },
 
     methods: {
-      getBaseConfig() {
+      getDefaultConfig() {
         return {
           security, regType, regWidget, layout
         }
