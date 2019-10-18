@@ -5,7 +5,7 @@
   import LineScalePulseOut from 'vue-loaders/dist/loaders/line-scale-pulse-out.js';
 
   import {
-    LoginLayout, loginWidget, licenseKey
+    LoginLayout, loginWidget, licenseKey, langs
   } from '../../config/account/base';
 
   export default {
@@ -14,6 +14,11 @@
     },
 
     props: {
+      lang: {
+        type: String,
+        default: langs.default,
+      },
+
       params: {
         type: Object
       }
@@ -29,9 +34,11 @@
           window.$myava.LoginLayout = {...LoginLayout};
           window.$myava.loginWidget = {...loginWidget};
 
-            const script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            script.src = window.$myava.loginWidget.configs.myAvaDomain + "Widgets/Login/scripts/myAvaLoginData.js";
-            tag.parentNode.insertBefore(script, tag);
+          window.$myava.LoginLayout.settings.Lang = this.lang;
+
+          const script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+          script.src = window.$myava.loginWidget.configs.myAvaDomain + "Widgets/Login/scripts/myAvaLoginData.js";
+          tag.parentNode.insertBefore(script, tag);
         };
 
         loginLoader();

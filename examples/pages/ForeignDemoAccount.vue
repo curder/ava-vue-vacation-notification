@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center flex-1 text-left">
-    <foreign-demo-account :params="params"></foreign-demo-account>
+    <foreign-demo-account :params="params" :lang="lang"></foreign-demo-account>
   </div>
 </template>
 <script>
@@ -9,6 +9,7 @@
   export default {
     data() {
       return {
+        lang: langs.zh_tw,
         params: {
           security: { licenseKey },
           regWidget,
@@ -18,7 +19,6 @@
     },
 
     mounted() {
-      this.params.layout.settings = Object.assign({}, this.params.layout.settings, {Lang: langs.zh_tw});
     }
   }
 </script>

@@ -16,6 +16,13 @@ export const regTypes = {
   demo: 2, // 模拟注册
 };
 
+export const langs = {
+  default: 'en', // 默认
+  en: 'en', // 英文
+  zh_cn: 'zh-hans', // 简体中文
+  zh_tw: 'zh-hant', // 繁体中文
+};
+
 export const regType = regTypes.real
 
 export const regWidget = {
@@ -34,7 +41,7 @@ export const regWidget = {
 export const layout = {
   settings: {
     Style: 'Style.css',
-    Lang: 'zh-hans',
+    Lang: 'en',
     'Show-Social': false,
     'Label-Inside': false,
     'Show-TradingPlatformLink': false,
@@ -62,14 +69,8 @@ export const LoginLayout = {
     ForColor: '',
     BackColor: '',
     Title: '',
-    Lang: 'zh-hans',
+    Lang: langs.en,
     Style: 'StyleBLogin.css',
     widgetContainerId: 'avaLoginWidgetContainer'
   }
-};
-
-export const langs = {
-  en: 'en',
-  zh_cn: 'zh-hans',
-  zh_tw: 'zh-hant',
 };
