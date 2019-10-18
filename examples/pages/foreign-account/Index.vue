@@ -19,16 +19,26 @@
     </div>
     <modal name="real-account"
            :width="600"
-           :height="450"
+           height="auto"
            @opened="openedHandle">
-      <foreign-real-account :params="params" :lang="realAccountModalLang"></foreign-real-account>
+      <div class="py-16 flex flex-1 items-center justify-center">
+        <div>
+          <h2 class="text-center text-2xl mb-4 font-extrabold ">Real Account</h2>
+          <foreign-real-account :params="params" :lang="realAccountModalLang"></foreign-real-account>
+        </div>
+      </div>
     </modal>
 
     <modal name="demo-account"
            :width="600"
-           :height="450"
+           height="auto"
            @opened="openedHandle">
-      <foreign-demo-account :params="params" :lang="demoAccountModalLang"></foreign-demo-account>
+      <div class="py-16 flex flex-1 items-center justify-center">
+        <div>
+          <h2 class="text-center text-2xl mb-4 font-extrabold ">Demo Account</h2>
+          <foreign-demo-account :params="params" :lang="demoAccountModalLang"></foreign-demo-account>
+        </div>
+      </div>
     </modal>
 
     <modal name="login-account"
