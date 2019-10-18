@@ -5,6 +5,9 @@
   .title {
     @apply text-gray-700 font-semibold;
   }
+  input[type=radio] {
+    @apply opacity-100 w-4;
+  }
 
   .plus, .minus {
     @apply ml-2 bg-green-200 px-4 rounded text-green-700;
