@@ -8,9 +8,9 @@ const PurgecssPlugin = require('purgecss-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader').VueLoaderPlugin
 const inProduction = process.env.NODE_ENV === 'production'
 const PATHS = {
-  src: path.join(__dirname)
+  src: path.join(__dirname, 'src')
 }
-console.log(PATHS);
+
 module.exports = {
 
   mode: process.env.NODE_ENV,
@@ -56,7 +56,7 @@ module.exports = {
 
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-      only: ['components']
+      // only: ['components']
     }),
 
   ],
