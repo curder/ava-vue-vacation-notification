@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import {licenseKey, loginWidget, LoginLayout, langs} from "../../src/config/account/base";
+  import {licenseKey, loginWidget, LoginLayout, langs} from "../../../src/config/account/base";
 
   export default {
     data() {

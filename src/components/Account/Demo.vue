@@ -34,6 +34,6 @@
       this.custom_params = Object.assign(this.params, { regType });
 
       this.custom_params.layout.settings.Lang = this.lang; // 设置组件语言
-    }
+    },
   }
 </script>

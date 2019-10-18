@@ -9,6 +9,9 @@
         <router-link class="font-semibold text-gray-700 hover:underline" :to="{name: 'vacation-notify'}">Vacation Notify</router-link>
         <span class="mx-4 text-gray-500">|</span>
 
+        <router-link class="font-semibold text-gray-700 hover:underline" :to="{name: 'foreign-account'}">Account</router-link>
+        <span class="mx-4 text-gray-500">|</span>
+
         <router-link class="font-semibold text-gray-700 hover:underline" :to="{name: 'foreign-real-account'}">Real Account</router-link>
         <span class="mx-4 text-gray-500">|</span>
 
