@@ -24,7 +24,7 @@
       <div class="py-16 flex flex-1 items-center justify-center">
         <div>
           <h2 class="text-center text-2xl mb-4 font-extrabold ">Real Account</h2>
-          <foreign-real-account :params="params" :lang="realAccountModalLang"></foreign-real-account>
+          <foreign-real-account :params="params" :lang="realAccountModalLang" :show-partner-code="false"></foreign-real-account>
         </div>
       </div>
     </modal>
@@ -36,7 +36,7 @@
       <div class="py-16 flex flex-1 items-center justify-center">
         <div>
           <h2 class="text-center text-2xl mb-4 font-extrabold ">Demo Account</h2>
-          <foreign-demo-account :params="params" :lang="demoAccountModalLang"></foreign-demo-account>
+          <foreign-demo-account :params="params" :lang="demoAccountModalLang" :show-partner-code="true"></foreign-demo-account>
         </div>
       </div>
     </modal>
@@ -47,7 +47,7 @@
       <foreign-login-account :params="params" :lang="loginAccountModalLang"></foreign-login-account>
     </modal>
 
-    <foreign-real-account :params="params" :lang="lang"></foreign-real-account>
+    <foreign-real-account :params="params" :lang="lang" :show-partner-code="false"></foreign-real-account>
   </div>
 </template>
 <script>

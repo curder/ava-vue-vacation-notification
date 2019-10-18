@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center flex-1 text-left">
-    <foreign-demo-account :params="params" :lang="lang"></foreign-demo-account>
+    <foreign-demo-account :params="params" :lang="lang" :show-partner-code="true"></foreign-demo-account>
   </div>
 </template>
 <script>

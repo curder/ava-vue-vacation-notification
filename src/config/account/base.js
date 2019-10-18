@@ -23,7 +23,7 @@ export const langs = {
   zh_tw: 'zh-hant', // 繁体中文
 };
 
-export const regType = regTypes.real
+export const regType = regTypes.real;
 
 export const regWidget = {
   configs: {
@@ -41,7 +41,7 @@ export const regWidget = {
 export const layout = {
   settings: {
     Style: 'Style.css',
-    Lang: 'en',
+    Lang: langs.default,
     'Show-Social': false,
     'Label-Inside': false,
     'Show-TradingPlatformLink': false,

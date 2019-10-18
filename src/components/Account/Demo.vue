@@ -3,13 +3,17 @@
 </template>
 <script>
   import Base from './Base.vue';
-  import { regTypes, langs } from '../../config/account/base';
+  import { regTypes, langs, regWidget } from '../../config/account/base';
 
   export default {
     props: {
       lang: {
         type: String,
         default: langs.default
+      },
+      showPartnerCode: {
+        type: Boolean,
+        default: regWidget.configs.ShowPartnerCode,
       },
 
       params: {
@@ -33,7 +37,9 @@
 
       this.custom_params = Object.assign(this.params, { regType });
 
+      // 组件自定义属性
       this.custom_params.layout.settings.Lang = this.lang; // 设置组件语言
+      this.custom_params.regWidget.configs.ShowPartnerCode = this.showPartnerCode; // 是否展示代理号输入框
     },
   }
 </script>
