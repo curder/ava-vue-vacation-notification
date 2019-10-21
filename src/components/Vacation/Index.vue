@@ -8,7 +8,7 @@
          height="auto"
          @before-open="beforeOpen"
          @before-close="beforeClose">
-    <notify :params="finish_params"></notify>
+    <notify :params="finish_params" v-if="Object.keys(finish_params).length"></notify>
   </modal>
 </template>
 <script>
