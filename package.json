@@ -2,12 +2,12 @@
   "name": "@curder/ava-vue-vacation-notification",
   "description": "ava vue vacation notification.",
   "author": "curder <q.curder@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/main.js",
   "dependencies": {
     "@vue/cli-service": "^4.2.3",
-    "core-js": "^2.6.5",
+    "core-js": "^3.6.4",
     "moment": "^2.24.0",
     "vue": "^2.6.10"
   },
