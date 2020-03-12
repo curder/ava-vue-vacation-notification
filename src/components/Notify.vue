@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { bus_event } from "../../config/vacation";
+import { bus_event } from "../config/vacation";
 export default {
   props: ["params"],
 

@@ -13,8 +13,8 @@
 </template>
 <script>
 import Notify from "./Notify.vue";
-import { modal_name, bus_event, default_params } from "../../config/vacation";
-import VacationMixins from "../../mixins/VacationMixin.js";
+import { modal_name, bus_event, default_params } from "../config/vacation";
+import VacationMixins from "../mixins/VacationMixin.js";
 
 export default {
   props: ["params"],

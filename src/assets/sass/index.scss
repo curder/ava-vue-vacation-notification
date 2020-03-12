@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-
-@import "./vacation/index.scss";
-
-@tailwind utilities;
+@import "./fade";
+@import "./header";
+@import "./body";
+@import "./footer";

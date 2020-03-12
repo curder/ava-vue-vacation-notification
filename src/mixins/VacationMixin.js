@@ -1,4 +1,3 @@
-import moment from 'moment'
 import { bus_event } from '../config/vacation'
 
 const mixin = {
@@ -22,10 +21,11 @@ const checkDateValid = date => {
   const start_string = '开始时间'
   const end_string = '结束时间'
   const string = '您设置的弹窗的{DATE}有误，请检查后重新输入,建议输入的格式为：YYYY-mm-dd HH:ii:ss'
-  if (!moment(date.start_time).isValid()) {
+  var reg = new RegExp(/^\d{4}-((0?[1-9])|(1[0-2]))-((0?[1-9])|([12]\d)|(3[01])) (([01]?\d)|(2[0-3])):[0-5]\d:[0-5]\d$/);
+  if (!reg.test(date.start_time)) {
     console.error(string.replace('{DATE}', start_string))
   }
-  if (!moment(date.end_time).isValid()) {
+  if (!reg.test(date.end_time)) {
     console.error(string.replace('{DATE}', end_string))
   }
 }

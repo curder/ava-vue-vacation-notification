@@ -7,7 +7,7 @@
     }
 
     a {
-      @apply px-10 py-2 text-gray-300 rounded;
+      @apply px-10 py-2 text-gray-300 rounded no-underline;
         &:hover {
           @apply shadow-lg text-gray-200;
       }
