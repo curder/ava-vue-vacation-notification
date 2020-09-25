@@ -7,7 +7,7 @@
   "main": "dist/main.js",
   "dependencies": {
     "@vue/cli-service": "^4.2.3",
-    "core-js": "^3.6.4",
+    "core-js": "^2.6.11",
     "moment": "^2.24.0",
     "vue": "^2.6.10"
   },
