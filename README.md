@@ -24,13 +24,18 @@ Vue.use(Plugin);
 ## Update plugin
 
 ```bash
-# install
+# 1. install
 bun i
 
-# build
+# 2. dev: write your awesome code
+
+
+# 3. build
 bun prod
 
-# publish
+# 4. change version from package.json
+
+# 5. publish
 bunx npm publish --registry https://registry.npmjs.org
 ```
 
