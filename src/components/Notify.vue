@@ -5,17 +5,15 @@
       <a class="vacation-notify-header-times" @click="closeNotify">&times;</a>
     </div>
     <div class="vacation-notify-body">
-      <h3 class="vacation-notify-body-title" v-if="finish_params.title" v-text="finish_params.title">
-        尊敬的客户
-      </h3>
+      <h3 class="vacation-notify-body-title" v-if="finish_params.title" v-text="finish_params.title"></h3>
       <div class="vacation-notify-body-content">
-        <p v-for="(item, index) in finish_params.items" :key="index" v-text="item"></p>
+        <div v-for="(item, index) in finish_params.items" :key="index" v-html="item"></div>
         <div class="vacation-notify-body-content-footer" v-if="this.shouldSeeContentFooter">
-          <p class="company" v-if="finish_params.company" v-text="finish_params.company">AvaTrade</p>
-          <p class="date" v-if="finish_params.date" v-text="finish_params.date">2019年1月5日</p>
-          <p class="close-tip" v-if="finish_params.should_duration">
+          <div class="company" v-if="finish_params.company" v-text="finish_params.company"></div>
+          <div class="date" v-if="finish_params.date" v-text="finish_params.date"></div>
+          <div class="close-tip" v-if="finish_params.should_duration">
             （<span v-text="finish_params.duration"></span>秒后弹窗自动关闭）
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -75,7 +73,7 @@ export default {
     },
     checkItems() {
       if (!this.finish_params.items.length || !(this.finish_params.items instanceof Array)) {
-        console.error("通知的配置数组有误，请检查 params.items 配置");
+        console.error("通知的配置数组有误，请检查 `params.items` 配置");
       }
     }
   }

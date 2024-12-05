@@ -1,8 +1,7 @@
-@import "./variables";
 // header
 .vacation-notify-header,
 .button-handle a {
-  background-color: $base-color;
+  background-color: #2482c5;
 }
 .vacation-notify-header {
   @apply rounded-t relative;
