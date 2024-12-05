@@ -14,9 +14,10 @@
   .vacation-notify-body-content {
     @apply text-base leading-normal;
     a {
-      @apply text-blue-500;
+      color: #2482c5;
+      @apply underline;
       &:hover {
-        @apply text-blue-700;
+        @apply text-gray-700;
       }
     }
     p {
