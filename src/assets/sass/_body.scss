@@ -13,6 +13,12 @@
 
   .vacation-notify-body-content {
     @apply text-base leading-normal;
+    a {
+      @apply text-blue-500;
+      &:hover {
+        @apply text-blue-700;
+      }
+    }
     p {
       text-indent: 0 !important;
       @apply text-sm mt-2 leading-normal mb-2;
